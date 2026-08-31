@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+main{padding: 50px 0;}
+
 /* 폼 */
 input{display: block; padding: 0 10px 0 16px; width: 100%; height: 50px; border: 0; border-radius: 8px; background-color: #fff; font-size: 14px;}
 input::placeholder{color: #978f8f;}
@@ -25,13 +27,17 @@ select{padding: 0 10px 0 16px; width: 100%; height: 50px; border: 0; border-radi
 
 /* 헤더 영역 */
 #headerWrap{border-bottom: 1px solid #ccc;}
-/* #headerWrap .headerTopWrap{border-bottom: 1px solid #ccc;} */
 #headerWrap .headerTopBox{position: relative; display: flex; align-items: center; justify-content: space-between;}
 #headerWrap .headerTopBox::after{content: ''; position: absolute; left: -100%; right:-100%; bottom: 0; height: 1px; background-color: #ccc;}
 #headerWrap .headerTopBox .headerLogoBox h1 a{display: block; padding: 20px 0 26px;}
 #headerWrap .headerTopBox .headerLogoBox h1 a img{display: block; width: 200px;}
 #headerWrap .headerBottomBox .headerMenu{display: flex; align-items: center;}
-#headerWrap .headerBottomBox .headerMenu li a{display: block; padding: 13px 30px; font-size: 16px;}
+#headerWrap .headerBottomBox .headerMenu li{position: relative;}
+#headerWrap .headerBottomBox .headerMenu > li > a{display: block; padding: 13px 30px; font-size: 16px; text-align: center;}
+#headerWrap .headerBottomBox .headerMenu > li:hover > a{font-weight: 600;}
+#headerWrap .headerBottomBox .headerMenu li .headerSubMenu{display: none; padding: 10px 0; min-width: 160px; position: absolute; left:50%; transform: translateX(-50%); background-color: #fff; border-radius:0 0 10px 10px; border-top: 2px solid #ee2d21; z-index: 999; box-shadow: 0 10px 20px rgba(0, 0, 0, .1);}
+#headerWrap .headerBottomBox .headerMenu li .headerSubMenu li a{padding: 12px 10px; display: block; text-align: center; word-break: keep-all; font-size: 15px; transition: all .3s;}
+#headerWrap .headerBottomBox .headerMenu li .headerSubMenu li a:hover{color: #ee2d21;}
 
 #mobileMenuWrap{display: none;}
 
@@ -44,11 +50,10 @@ select{padding: 0 10px 0 16px; width: 100%; height: 50px; border: 0; border-radi
 
   /* 모바일메뉴 */
   #mobileMenuWrap{display: block;}
-  #mobileMenuWrap .mobileMenuBox{display: flex; flex-direction: column; padding: 0 0 20px; max-width: 320px; width: 100%; position: fixed; top:79px; right:-1000px; bottom: 0; background-color: #fff; transition: all .3s; border-radius: 0 0 0 60px; box-shadow: 0 20px 50px rgba(0, 0, 0, .1); z-index: 999;}
+  #mobileMenuWrap .mobileMenuBox{display: flex; flex-direction: column; padding: 0 0 20px; max-width: 320px; width: 100%; position: fixed; top:79px; right:-1000px; bottom: 0; background-color: #fff; transition: all .3s; border-radius: 0 0 0 60px; box-shadow: 0 20px 50px rgba(0, 0, 0, .1); z-index: 999; overflow-y: auto;}
   #mobileMenuWrap .mobileMenu{padding: 20px 0;}
-  #mobileMenuWrap .mobileMenu li a{display: block; padding: 17px 20px 17px 30px; color: #333; font-weight: 600; font-size: 16px;}
-  #mobileMenuWrap .mobileMenuBtn{position: relative; display: flex; justify-content: center;
-      align-items: center; width: 28px; height: 28px;}
+  #mobileMenuWrap .mobileMenu > li > a{position: relative; display: block; padding: 17px 20px 17px 30px; color: #333; font-weight: 600; font-size: 16px;}
+  #mobileMenuWrap .mobileMenu > li > a::after{content: ""; position: absolute; right: 20px; top: 50%; width: 8px; height: 8px; border-right: 2px solid #333; border-bottom: 2px solid #333; transform: translateY(-70%) rotate(45deg); transition: all .3s;}
   #mobileMenuWrap .mobileMenuBtn span{position: absolute; width: 21px;
     height: 2px; border-radius: 30px; background: #333; transition: all .3s;}
   #mobileMenuWrap .mobileMenuBtn span:nth-child(1){transform: translateY(-6px);}
@@ -58,6 +63,13 @@ select{padding: 0 10px 0 16px; width: 100%; height: 50px; border: 0; border-radi
   #mobileMenuWrap.active .mobileMenuBtn span:nth-child(2){opacity: 0;}
   #mobileMenuWrap.active .mobileMenuBtn span:nth-child(3){transform: rotate(-45deg);}
   #mobileMenuWrap.active .mobileMenuBox{right: 0;}
+  #mobileMenuWrap .mobileMenu > li.active > a::after{transform: translateY(-30%) rotate(-135deg);}
+  #mobileMenuWrap .mobileMenuBtn{position: relative; display: flex; justify-content: center;
+      align-items: center; width: 28px; height: 28px;}
+  #mobileMenuWrap .mobileSubMenu{display: none;}
+  #mobileMenuWrap .mobileSubMenu li a{display: flex; gap: 0 7px; padding: 12px 20px 12px 42px;}
+  #mobileMenuWrap .mobileSubMenu li a::before{content: ''; flex-shrink: 0; margin: 11px 0; width: 5px; height: 1px; background-color: #222;}
+
 
 }
 
@@ -113,8 +125,6 @@ select{padding: 0 10px 0 16px; width: 100%; height: 50px; border: 0; border-radi
 .commonPopupWrap .marketingOptOutList{display:flex; flex-direction:column; gap:5px;}
 .commonPopupWrap .marketingOptOutList li{position:relative; padding-left:12px;}
 .commonPopupWrap .marketingOptOutList li::before{content:"-"; position:absolute; top:0; left:0;}
-
-
 .commonPopupWrap .insuranceNoticeBox{color:#555; font-size:14px; line-height:1.7;}
 .commonPopupWrap .insuranceNoticeBox .popupContentTitle{margin-bottom:20px; padding-right:35px; color:#222; font-size:22px; font-weight:700; line-height:1.4;}
 .commonPopupWrap .insuranceNoticeSection + .insuranceNoticeSection{margin-top:30px;}
@@ -142,5 +152,60 @@ body.popupOpen{overflow:hidden;}
 
     .commonPopupWrap .insuranceNoticeBox .popupContentTitle{font-size:19px;}
     .commonPopupWrap .privacyPolicyNoticeList{padding:15px;}
+
+}
+
+/* 폼 영역 */
+#formInfoWrap .formInfoBox{padding: 38px 0; display: flex; justify-content: center; gap: 50px 0; box-shadow: 0 10px 20px rgba(0, 0, 0, .1); border-radius: 20px; background-color: #fff4f3;}
+#formInfoWrap .formSlideInfoBox{padding: 0 20px; position: relative; width: 65%; margin-top: 25px;}
+#formInfoWrap .formSlideInfoBox .insuranceSlideTitle{color: #ee2d21; font-size: 20px; text-align: center;}
+#formInfoWrap .formSlideInfoBox .insuranceProductName{margin-bottom: 8px; color: #7b71e3; font-size: 26px; text-align: center; word-break: keep-all;}
+#formInfoWrap .formSlideInfoBox img{display: block; margin: 30px auto; width: 120px;}
+#formInfoWrap .formSlideInfoBox .insuranceSlideSummary{font-size: 20px; text-align: center;}
+#formInfoWrap .formSlideInfoBox .insuranceSlideDescription{font-size: 18px; text-align: center;}
+#formInfoWrap .formSlideInfoBox .slick-slider{position: static;}
+#formInfoWrap .slick-dots{position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; display: flex; gap: 0 8px; align-items: center; justify-content: center; width: 100%;}
+#formInfoWrap .slick-dots li.slick-active button{background-color: #ee2d21;}
+#formInfoWrap .slick-dots li button{display: block; width: 8px; height: 8px; text-indent: -9999px; border-radius: 50%; background-color:#ddd; cursor: pointer;}
+#formInfoWrap .formInputBox .formUserInfoBox{display: flex; align-items: center; gap: 0 15px;}
+#formInfoWrap .formInputBox{width: 35%; padding:0 20px; }
+#formInfoWrap .formInputBox h2{margin-bottom: 20px; font-size: 18px; text-align: center; color: #000;}
+#formInfoWrap .formInputBox .formBox{margin-bottom: 15px;}
+#formInfoWrap .formInputBox .formBox:last-child{margin-bottom: 0;}
+#formInfoWrap .formInputBox .genderSelectBox{width: 40%; display: flex;}
+#formInfoWrap .formInputBox .genderSelectBox .inputRadioBox{flex: 1; height: 50px;}
+#formInfoWrap .formInputBox .genderSelectBox label{display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; background-color: #fff; cursor: pointer; font-weight: 300; border-radius: 8px; }
+#formInfoWrap .formInputBox .genderSelectBox input:checked + label{font-weight: 700; border: 2px solid #ee2d21;}
+#formInfoWrap .formInputBox .detailViewBtn{font-size: 14px; text-decoration: underline; color: #0e6ca5; line-height: 1;}
+#formInfoWrap .formInputBox .inputCheckBox{margin-bottom: 20px; display: flex; justify-content: center; align-items: center; gap: 10px;}
+#formInfoWrap .formInputBox .formBtn{display: flex; align-items: center; justify-content: center; width: 100%; height: 50px; background-color: #ee2d21; color: #fff; border-radius: 8px;}
+
+@media (max-width: 1024px){
+
+  #formInfoWrap .formInfoBox{flex-direction: column; gap: 80px 0;}
+  #formInfoWrap .formSlideInfoBox{width: 100%;}
+  #formInfoWrap .slick-dots{margin-top: 50px; position: static; transform: none;}
+  #formInfoWrap .formInputBox{width: 100%;}
+  #formInfoWrap .formInputBox .inputTextBox{flex: 1;}
+  #formInfoWrap .formInputBox .genderSelectBox{width: 26%;;}
+
+}
+
+@media (max-width: 768px){
+
+  #formInfoWrap .formSlideInfoBox .insuranceSlideTitle,
+  #formInfoWrap .formSlideInfoBox .insuranceSlideSummary{font-size: 18px;}
+  #formInfoWrap .formSlideInfoBox .insuranceProductName{font-size: 22px;}
+  #formInfoWrap .formSlideInfoBox .insuranceSlideDescription{font-size: 16px;}
+
+}
+
+
+@media (max-width: 480px){
+
+  #formInfoWrap .formSlideInfoBox .insuranceSlideTitle,
+  #formInfoWrap .formSlideInfoBox .insuranceSlideSummary{font-size: 16px;}
+  #formInfoWrap .formSlideInfoBox .insuranceProductName{font-size: 20px;}
+  #formInfoWrap .slick-dots{margin-top: 30px;}
 
 }
