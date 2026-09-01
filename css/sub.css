@@ -4,8 +4,8 @@
 
 /* 폼 영역 */
 #formInfoWrap{padding: 50px 0 80px;}
-#formInfoWrap input,
-#formInfoWrap select{border: 1px solid #ccc;}
+#formInfoWrap .formInputBox .genderSelectBox label{border-radius: 0; border: 2px solid #ccc;}
+#formInfoWrap input{border: 2px solid #ccc; border-radius: 0;}
 #formInfoWrap .formInfoBox{padding: 38px 20px; gap: 80px; background-color: #fdfdfd; box-shadow: 0 0 30px rgba(0, 0, 0, .1);}
 #formInfoWrap .formInfoDescBox{position: relative; width: 50%; margin-top: 25px;}
 #formInfoWrap .formInfoDescBox .insuranceSlideTitle,
@@ -14,8 +14,8 @@
 #formInfoWrap .formInfoDescBox .insuranceSlideDescription{text-align: left;}
 #formInfoWrap .formInfoDescBox .insuranceSlideTitle{color: #ee2d21; font-size: 20px;}
 #formInfoWrap .formInfoDescBox .insuranceProductName{margin-bottom: 25px; color: #7b71e3; font-size: 26px; word-break: keep-all;}
-#formInfoWrap .formInfoDescBox .insuranceSlideSummary{margin-bottom: 15px; font-size: 20px;}
-#formInfoWrap .formInfoDescBox .insuranceSlideDescription{font-size: 18px;}
+#formInfoWrap .formInfoDescBox .insuranceSlideSummary{margin-bottom: 25px; font-size: 20px; font-weight: 600; color: #595959;}
+#formInfoWrap .formInfoDescBox .insuranceSlideDescription{font-size: 16px;}
 #formInfoWrap .formInfoDescBox .img{display: block; position: absolute; bottom: 0; right:0; width: 130px;}
 #formInfoWrap .formInputBox{padding: 0;}
 
@@ -60,13 +60,13 @@
 #insuranceCoverageWrap .insuranceDetailBox{padding: 50px 0;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailTitle{margin-bottom: 50px; font-weight: 600; font-size: 20px;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailTitle strong{color: #ee2d21;}
-#insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li{margin-bottom: 6px; font-weight: 600; font-size: 18px;}
+#insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li{margin-bottom: 6px; font-weight: 600; font-size: 16px;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li p{margin: 8px 0; font-size: 14px; color: #ababab;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li:last-child{margin-bottom: 0;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailImgBox img{display: block;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailList > li{margin-bottom: 50px; padding: 50px; display: flex; align-items: center; justify-content: space-between; gap: 150px;  background-color: #f4f8ff;  border-radius: 20px;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailList > li:last-child{margin-bottom: 0;}
-#insuranceCoverageWrap .insuranceDetailBox .insuranceDetailImgBox img{display: block; width: 260px;}
+#insuranceCoverageWrap .insuranceDetailBox .insuranceDetailImgBox img{display: block; width: 192px;}
 
 @media (max-width: 1199px){
 
@@ -96,8 +96,6 @@
 @media (max-width: 480px){
 
   #insuranceCoverageWrap .insuranceCoverageList{grid-template-columns: 1fr; gap: 70px}
-
-  #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailImgBox img{width: 200px;}
 
 }
 

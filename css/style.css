@@ -200,12 +200,15 @@ body.popupOpen{overflow:hidden;}
 
 }
 
-
 @media (max-width: 480px){
 
   #formInfoWrap .formSlideInfoBox .insuranceSlideTitle,
   #formInfoWrap .formSlideInfoBox .insuranceSlideSummary{font-size: 16px;}
   #formInfoWrap .formSlideInfoBox .insuranceProductName{font-size: 20px;}
   #formInfoWrap .slick-dots{margin-top: 30px;}
+
+  #formInfoWrap .formInputBox .formUserInfoBox{flex-direction: column; gap: 15px 0;;}
+  #formInfoWrap .formInputBox .formUserInfoBox .inputTextBox{width: 100%;}
+  #formInfoWrap .formInputBox .formUserInfoBox .genderSelectBox{width: 100%;}
 
 }
