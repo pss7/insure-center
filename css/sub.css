@@ -64,7 +64,7 @@
 #insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li p{margin: 8px 0; font-size: 14px; color: #ababab;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li:last-child{margin-bottom: 0;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailImgBox img{display: block;}
-#insuranceCoverageWrap .insuranceDetailBox .insuranceDetailList > li{margin-bottom: 50px; padding: 50px; display: flex; align-items: center; justify-content: space-between; gap: 150px;  background-color: #f4f8ff;  border-radius: 20px;}
+#insuranceCoverageWrap .insuranceDetailBox .insuranceDetailList > li{margin-bottom: 50px; padding: 50px; display: flex; align-items: center; justify-content: space-between; gap: 150px;  border-radius: 20px;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailList > li:last-child{margin-bottom: 0;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailImgBox img{display: block; width: 192px;}
 
