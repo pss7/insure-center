@@ -60,7 +60,7 @@
 #insuranceCoverageWrap .insuranceDetailBox{padding: 50px 0;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailTitle{margin-bottom: 50px; font-weight: 600; font-size: 20px;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailTitle strong{color: #ee2d21;}
-#insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li{margin-bottom: 6px; font-weight: 600; font-size: 16px;}
+#insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li{margin-bottom: 6px; font-weight: 600; font-size: 16px; word-break: keep-all;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li p{margin: 8px 0; font-size: 14px; color: #ababab;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceBenefitList li:last-child{margin-bottom: 0;}
 #insuranceCoverageWrap .insuranceDetailBox .insuranceDetailImgBox img{display: block;}
